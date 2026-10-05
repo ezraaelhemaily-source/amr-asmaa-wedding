@@ -828,30 +828,30 @@ h2 {
     }
 }
 
-    /* Scroll Hint */
+   /* Scroll hint after opening the envelope */
 
-.opening-screen {
+.invitation {
     position: relative;
 }
 
-.scroll-hint {
-    position: absolute;
-    bottom: 28px;
-    left: 50%;
-    z-index: 10;
+.invitation .scroll-hint {
+    position: relative;
+    z-index: 5;
     display: flex;
+    margin: 0 auto;
+    padding: 22px 0 5px;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     color: var(--gold);
     font-family: "Montserrat", sans-serif;
     font-size: 10px;
     letter-spacing: 3px;
-    transform: translateX(-50%);
+    text-align: center;
     animation: scrollHintFloat 1.8s ease-in-out infinite;
 }
 
-.scroll-arrow {
+.invitation .scroll-arrow {
     color: var(--burgundy);
     font-family: Georgia, serif;
     font-size: 28px;
@@ -861,21 +861,20 @@ h2 {
 @keyframes scrollHintFloat {
     0%,
     100% {
-        transform: translate(-50%, 0);
+        transform: translateY(0);
         opacity: 0.65;
     }
 
     50% {
-        transform: translate(-50%, 8px);
+        transform: translateY(8px);
         opacity: 1;
     }
 }
 
 @media (max-width: 600px) {
-    .scroll-hint {
-        bottom: 20px;
+    .invitation .scroll-hint {
+        padding-top: 18px;
         font-size: 9px;
         letter-spacing: 2px;
     }
 }
-
