@@ -130,7 +130,9 @@ messageForm.addEventListener("submit", async function (event) {
 
         if (response.ok) {
             messageForm.reset();
-            successMessage.style.display = "block";
+
+            successMessage.classList.add("show");
+
             submitButton.textContent = "MESSAGE SENT";
         } else {
             throw new Error("Message could not be sent");
@@ -138,7 +140,7 @@ messageForm.addEventListener("submit", async function (event) {
     } catch (error) {
         submitButton.disabled = false;
         submitButton.textContent = "SEND MESSAGE";
+
         alert("Something went wrong. Please try again.");
     }
 });
-
