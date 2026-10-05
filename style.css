@@ -674,17 +674,8 @@ h2 {
     right: 18px;
     font-size: 30px;
 }
-/* Guest Messages Section */
 
-.messages-section {
-    background:
-        linear-gradient(
-            rgba(255, 250, 243, 0.94 ),
-            rgba(255, 250, 243, 0.97)
-        );
-}
-
-/* Beautiful Guest Message Section */
+/* Guest Messages Form */
 
 .messages-section {
     position: relative;
@@ -725,23 +716,64 @@ h2 {
 
 .message-intro {
     max-width: 520px;
-    margin: 20px auto 30px;
+    margin: 20px auto 32px;
     color: var(--brown);
     font-family: "Cormorant Garamond", serif;
     font-size: 24px;
     line-height: 1.5;
 }
 
+.message-form {
+    width: min(92%, 520px);
+    margin: 0 auto;
+    padding: 30px;
+    border: 1px solid rgba(200, 162, 74, 0.55);
+    background: rgba(255, 250, 243, 0.8);
+    box-shadow: 0 12px 28px rgba(74, 16, 29, 0.12);
+    text-align: left;
+}
+
+.message-form label {
+    display: block;
+    margin: 16px 0 8px;
+    color: var(--burgundy);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.message-form input[type="text"],
+.message-form textarea {
+    width: 100%;
+    border: 1px solid rgba(112, 77, 60, 0.35);
+    outline: none;
+    padding: 14px;
+    color: var(--burgundy);
+    background: #fffdf9;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    resize: vertical;
+}
+
+.message-form input[type="text"]:focus,
+.message-form textarea:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 2px rgba(200, 162, 74, 0.15);
+}
+
 .message-button {
-    display: inline-block;
-    padding: 17px 38px;
+    display: block;
+    margin: 25px auto 0;
+    padding: 16px 30px;
     border: 1px solid var(--gold);
     color: var(--paper);
     background: var(--burgundy);
-    font-size: 11px;
-    letter-spacing: 3px;
-    text-decoration: none;
-    transition: 0.35s ease;
+    font-family: "Montserrat", sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: 0.3s ease;
 }
 
 .message-button:hover {
@@ -749,23 +781,26 @@ h2 {
     background: transparent;
 }
 
-.message-note {
+.success-message {
+    display: none;
     margin-top: 22px;
-    color: var(--light-brown) !important;
+    color: var(--dark-gold) !important;
     font-family: "Cormorant Garamond", serif;
-    font-size: 18px !important;
-    font-style: italic;
+    font-size: 20px !important;
+    text-align: center;
 }
 
 @media (max-width: 600px) {
+    .message-form {
+        width: 100%;
+        padding: 22px;
+    }
+
     .message-intro {
         font-size: 21px;
     }
-
-    .message-button {
-        padding: 15px 28px;
-    }
 }
+
 
 
 }
