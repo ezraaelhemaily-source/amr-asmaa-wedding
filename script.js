@@ -106,3 +106,39 @@ function updateCountdown() {
 updateCountdown();
 
 setInterval(updateCountdown, 1000);
+
+const messageForm = document.getElementById("messageForm");
+const successMessage = document.getElementById("successMessage");
+
+messageForm.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    const submitButton = messageForm.querySelector("button");
+    const formData = new FormData(messageForm);
+
+    submitButton.disabled = true;
+    submitButton.textContent = "SENDING...";
+
+    try {
+        const response = await fetch(messageForm.action, {
+            method: "POST",
+            body: formData,
+            headers: {
+                Accept: "application/json"
+            }
+        });
+
+        if (response.ok) {
+            messageForm.reset();
+            successMessage.style.display = "block";
+            submitButton.textContent = "MESSAGE SENT";
+        } else {
+            throw new Error("Message could not be sent");
+        }
+    } catch (error) {
+        submitButton.disabled = false;
+        submitButton.textContent = "SEND MESSAGE";
+        alert("Something went wrong. Please try again.");
+    }
+});
+
