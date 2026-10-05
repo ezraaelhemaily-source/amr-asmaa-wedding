@@ -684,25 +684,88 @@ h2 {
         );
 }
 
+/* Beautiful Guest Message Section */
+
+.messages-section {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255, 250, 243, 0.98),
+            rgba(244, 226, 207, 0.95)
+        );
+}
+
+.messages-section::before,
+.messages-section::after {
+    position: absolute;
+    color: rgba(200, 162, 74, 0.25);
+    font-family: Georgia, serif;
+    font-size: 130px;
+    content: "❦";
+}
+
+.messages-section::before {
+    top: 20px;
+    left: 5%;
+    transform: rotate(-25deg);
+}
+
+.messages-section::after {
+    right: 5%;
+    bottom: 20px;
+    transform: rotate(25deg);
+}
+
+.messages-section > * {
+    position: relative;
+    z-index: 1;
+}
+
 .message-intro {
     max-width: 520px;
     margin: 20px auto 30px;
     color: var(--brown);
     font-family: "Cormorant Garamond", serif;
-    font-size: 23px;
+    font-size: 24px;
     line-height: 1.5;
 }
 
-.google-form {
-    display: block;
-    width: 100%;
-    max-width: 700px;
-    height: 650px;
-    margin: 30px auto 0;
+.message-button {
+    display: inline-block;
+    padding: 17px 38px;
     border: 1px solid var(--gold);
-    border-radius: 8px;
-    background: var(--paper);
-    box-shadow: 0 10px 25px rgba(74, 16, 29, 0.15);
+    color: var(--paper);
+    background: var(--burgundy);
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-decoration: none;
+    transition: 0.35s ease;
 }
+
+.message-button:hover {
+    color: var(--burgundy);
+    background: transparent;
+}
+
+.message-note {
+    margin-top: 22px;
+    color: var(--light-brown) !important;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 18px !important;
+    font-style: italic;
+}
+
+@media (max-width: 600px) {
+    .message-intro {
+        font-size: 21px;
+    }
+
+    .message-button {
+        padding: 15px 28px;
+    }
+}
+
 
 }
