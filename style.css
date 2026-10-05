@@ -674,37 +674,37 @@ h2 {
     right: 18px;
     font-size: 30px;
 }
-    /* Guest Messages Form */
+   /* Elegant Guest Message Form */
 
 .messages-section {
     position: relative;
     overflow: hidden;
     background:
-        radial-gradient(
-            circle at center,
-            rgba(255, 250, 243, 0.98),
-            rgba(244, 226, 207, 0.95)
+        linear-gradient(
+            rgba(248, 238, 227, 0.88),
+            rgba(248, 238, 227, 0.94)
         );
 }
 
 .messages-section::before,
 .messages-section::after {
     position: absolute;
-    color: rgba(200, 162, 74, 0.25);
+    color: rgba(200, 162, 74, 0.22);
     font-family: Georgia, serif;
-    font-size: 130px;
+    font-size: 120px;
     content: "❦";
+    pointer-events: none;
 }
 
 .messages-section::before {
     top: 20px;
-    left: 5%;
+    left: 7%;
     transform: rotate(-25deg);
 }
 
 .messages-section::after {
-    right: 5%;
-    bottom: 20px;
+    right: 7%;
+    bottom: 25px;
     transform: rotate(25deg);
 }
 
@@ -714,36 +714,31 @@ h2 {
 }
 
 .message-intro {
-    max-width: 520px;
-    margin: 20px auto 32px;
+    max-width: 500px;
+    margin: 18px auto 35px;
     color: var(--brown);
     font-family: "Cormorant Garamond", serif;
-    font-size: 24px;
+    font-size: 23px;
     line-height: 1.5;
 }
 
 .message-form {
     display: flex;
     width: min(92%, 560px);
-    margin: 30px auto 0;
-    padding: 32px;
+    margin: 0 auto;
+    padding: 8px 10px;
     flex-direction: column;
-    gap: 10px;
-    border: 1px solid rgba(200, 162, 74, 0.55);
-    border-radius: 4px;
-    background: rgba(255, 250, 243, 0.92);
-    box-shadow: 0 12px 28px rgba(74, 16, 29, 0.14);
+    gap: 8px;
+    background: transparent;
     text-align: left;
 }
 
 .message-form label {
-    display: block;
-    margin: 8px 0 2px;
-    color: var(--burgundy);
-    font-family: "Montserrat", sans-serif;
-    font-size: 11px;
+    margin: 18px 0 0;
+    color: var(--dark-gold);
+    font-size: 10px;
     font-weight: 600;
-    letter-spacing: 1px;
+    letter-spacing: 3px;
     text-transform: uppercase;
 }
 
@@ -751,15 +746,15 @@ h2 {
 .message-form textarea {
     display: block;
     width: 100%;
-    margin: 0 0 12px;
-    padding: 15px;
-    border: 1px solid rgba(112, 77, 60, 0.35);
-    border-radius: 2px;
+    border: 0;
+    border-bottom: 1px solid rgba(157, 118, 45, 0.65);
+    border-radius: 0;
     outline: none;
+    padding: 13px 4px;
     color: var(--burgundy);
-    background: #fffdf9;
-    font-family: "Montserrat", sans-serif;
-    font-size: 14px;
+    background: transparent;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 21px;
 }
 
 .message-form input[type="text"] {
@@ -767,28 +762,36 @@ h2 {
 }
 
 .message-form textarea {
-    min-height: 135px;
+    min-height: 105px;
     resize: vertical;
+}
+
+.message-form input::placeholder,
+.message-form textarea::placeholder {
+    color: rgba(112, 77, 60, 0.55);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 19px;
+    font-style: italic;
 }
 
 .message-form input[type="text"]:focus,
 .message-form textarea:focus {
-    border-color: var(--gold);
-    box-shadow: 0 0 0 3px rgba(200, 162, 74, 0.15);
+    border-bottom: 2px solid var(--burgundy);
+    box-shadow: none;
 }
 
 .message-form .message-button {
-    display: block;
-    width: fit-content;
-    margin: 18px auto 0;
-    padding: 15px 32px;
+    align-self: center;
+    margin-top: 30px;
+    padding: 15px 34px;
     border: 1px solid var(--gold);
     color: var(--paper);
     background: var(--burgundy);
     font-family: "Montserrat", sans-serif;
     font-size: 10px;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     cursor: pointer;
+    transition: 0.35s ease;
 }
 
 .message-form .message-button:hover {
@@ -798,30 +801,29 @@ h2 {
 
 .success-message {
     display: none;
-    margin: 15px 0 0;
+    margin: 18px 0 0;
     color: var(--dark-gold) !important;
     font-family: "Cormorant Garamond", serif;
-    font-size: 20px !important;
+    font-size: 21px !important;
+    font-style: italic;
     text-align: center;
 }
 
 .success-message.show {
-    display: block;
+    display: block !important;
 }
 
 @media (max-width: 600px) {
     .message-form {
         width: 100%;
-        padding: 22px;
-    }
-
-    .message-form .message-button {
-        width: 100%;
+        padding: 8px 4px;
     }
 
     .message-intro {
         font-size: 21px;
     }
+
+    .message-form .message-button {
+        width: auto;
+    }
 }
-
-
