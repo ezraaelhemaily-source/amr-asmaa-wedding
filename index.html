@@ -229,20 +229,49 @@
         Share your love, wishes, and beautiful words with Amr & Asmaa.
     </p>
 
-    <a
-        class="message-button"
-        href="https://docs.google.com/forms/d/e/1FAIpQLSdV-oYf2-y1I0wTeyh5ojQO9byjYLVFv0LyKSQg5qGxd48JqA/viewform"
-        target="_blank"
-        rel="noopener noreferrer"
+    <form
+        id="messageForm"
+        action="https://formspree.io/f/xoejqgvv"
+        method="POST"
+        class="message-form"
     >
-        WRITE A MESSAGE
-    </a>
 
-    <p class="message-note">
-        Your kind words will mean so much to us.
-    </p>
+        <label for="guestName">Your Name</label>
+        <input
+            type="text"
+            id="guestName"
+            name="Guest Name"
+            placeholder="Enter your name"
+            required
+        >
+
+        <label for="guestMessage">Your Message</label>
+        <textarea
+            id="guestMessage"
+            name="Message"
+            placeholder="Write your lovely message here..."
+            rows="5"
+            required
+        ></textarea>
+
+        <input
+            type="hidden"
+            name="_subject"
+            value="A New Message for Amr & Asmaa"
+        >
+
+        <button type="submit" class="message-button">
+            SEND MESSAGE
+        </button>
+
+        <p id="successMessage" class="success-message">
+            Thank you for your beautiful message!
+        </p>
+
+    </form>
 
 </section>
+
 
 
 
